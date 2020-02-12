@@ -48,7 +48,7 @@ chrome.notifications.onClicked.addListener(
         chrome.tabs.query({}, tabs => {
             //最初に開かれているTweetDeckウィンドウへ移動
             chrome.tabs.query({ "url": "https://tweetdeck.twitter.com/" }, function(tab) {
-                chrome.tabs.update(tab[0].id, { active: true });
+                if (tab.length > 0) chrome.tabs.update(tab[0].id, { active: true });
             });
         });
     }
