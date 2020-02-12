@@ -1,0 +1,4 @@
+{
+    "extDescription": { "message": "Detects two windows in TweetDeck" },
+    "MultipleTweetDeckWindow": { "message": "Multiple TweetDeck windows have been detected." }
+}
