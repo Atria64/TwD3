@@ -24,8 +24,7 @@
     "permissions": [
         "tabs",
         "notifications",
-        "storage",
-        "contextMenus"
+        "storage"
     ],
     "author": "Atria"
 }
