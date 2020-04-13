@@ -14,7 +14,7 @@
         "128": "icon128.png"
     },
     "background": {
-        "scripts": ["EventPage.js"],
+        "scripts": ["EventPage.js","IconClickEvent.js"],
         "persistent": false
     },
     "content_scripts": [{
@@ -24,7 +24,8 @@
     "permissions": [
         "tabs",
         "notifications",
-        "storage"
+        "storage",
+        "contextMenus"
     ],
     "author": "Atria"
 }
