@@ -35,9 +35,8 @@ chrome.runtime.onMessage.addListener(
 
                 var deleteWindowEnabled = value.deleteWindowEnabled;
                 if (TwitterWindowCounter > 1) {
-                    //設定参照
                     if (deleteWindowEnabled === true) {
-                        //二窓検知時のタブ削除処理
+                        //Deleting tabs when detected double TweetDeck window.
                         chrome.tabs.query({ 'url': 'https://tweetdeck.twitter.com/' }, function(tab) {
                             for (let i = 1; i < TwitterWindowCounter; i++) {
                                 chrome.tabs.remove(tab[i].id);
@@ -45,7 +44,7 @@ chrome.runtime.onMessage.addListener(
                             chrome.tabs.update(tab[0].id, { active: true });
                         });
                     }
-                    //通知
+                    //notification
                     const options = {
                         iconUrl: 'icon.png',
                         type: 'list',
@@ -67,11 +66,11 @@ chrome.runtime.onMessage.addListener(
         sendResponse({ returnValue: true });
     }
 );
-//通知クリック時
+//notification_onclick
 chrome.notifications.onClicked.addListener(
     function(notificationId) {
         chrome.tabs.query({}, tabs => {
-            //最初に開かれているTweetDeckウィンドウへ移動
+            //Go to the first open TweetDeck window
             chrome.tabs.query({ "url": "https://tweetdeck.twitter.com/" }, function(tab) {
                 if (tab.length > 0) chrome.tabs.update(tab[0].id, { active: true });
             });
