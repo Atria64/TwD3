@@ -17,6 +17,19 @@ chrome.runtime.onMessage.addListener(
                             chrome.tabs.remove(tab[i].id);
                         }
                     });
+                    const options = {
+                        iconUrl: 'icon.png',
+                        type: 'list',
+                        title: "TwD3",
+                        message: '',
+                        priority: 1,
+                        items: [{
+                            title: 'disabled',
+                            message: chrome.i18n.getMessage('BanedTweetDeckWindow')
+                        }]
+                    };
+                    let notificationId = "notification";
+                    chrome.notifications.create(notificationId, options);
                     return;
                 }
 

@@ -1,4 +1,5 @@
 {
     "extDescription": { "message": "TweetDeck二窓検知Chrome拡張" },
-    "MultipleTweetDeckWindow": { "message": "二窓を検知しました。" }
+    "MultipleTweetDeckWindow": { "message": "二窓を検知しました。" },
+    "BanedTweetDeckWindow": { "message": "現在TweetDeckを禁止しています。" }
 }
