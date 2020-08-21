@@ -1,18 +1,28 @@
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
-
-        var TwitterWindowCounter = 0;
         chrome.tabs.query({}, tabs => {
+
+            var TwitterWindowCounter = 0;
             for (let i = 0; i < tabs.length; i++) {
                 if (tabs[i].url === 'https://tweetdeck.twitter.com/') {
                     TwitterWindowCounter += 1;
                 }
             }
 
-            if (TwitterWindowCounter > 1) {
-                //設定参照
-                chrome.storage.sync.get('deleteWindowEnabled', function(value) {
-                    var deleteWindowEnabled = value.deleteWindowEnabled;
+            chrome.storage.sync.get(['banTweetDeckWindowEnabled', 'deleteWindowEnabled'], function(value) {
+                var banTweetDeckWindowEnabled = value.banTweetDeckWindowEnabled;
+                if (banTweetDeckWindowEnabled === true) {
+                    chrome.tabs.query({ 'url': 'https://tweetdeck.twitter.com/' }, function(tab) {
+                        for (let i = 0; i < TwitterWindowCounter; i++) {
+                            chrome.tabs.remove(tab[i].id);
+                        }
+                    });
+                    return;
+                }
+
+                var deleteWindowEnabled = value.deleteWindowEnabled;
+                if (TwitterWindowCounter > 1) {
+                    //設定参照
                     if (deleteWindowEnabled === true) {
                         //二窓検知時のタブ削除処理
                         chrome.tabs.query({ 'url': 'https://tweetdeck.twitter.com/' }, function(tab) {
@@ -22,22 +32,24 @@ chrome.runtime.onMessage.addListener(
                             chrome.tabs.update(tab[0].id, { active: true });
                         });
                     }
-                });
-                //通知
-                const options = {
-                    iconUrl: 'icon.png',
-                    type: 'list',
-                    title: "TwD3",
-                    message: '',
-                    priority: 1,
-                    items: [{
-                        title: 'detected',
-                        message: chrome.i18n.getMessage('MultipleTweetDeckWindow')
-                    }]
-                };
-                let notificationId = "notification";
-                chrome.notifications.create(notificationId, options);
-            }
+                    //通知
+                    const options = {
+                        iconUrl: 'icon.png',
+                        type: 'list',
+                        title: "TwD3",
+                        message: '',
+                        priority: 1,
+                        items: [{
+                            title: 'detected',
+                            message: chrome.i18n.getMessage('MultipleTweetDeckWindow')
+                        }]
+                    };
+                    let notificationId = "notification";
+                    chrome.notifications.create(notificationId, options);
+                }
+            });
+
+
         });
         sendResponse({ returnValue: true });
     }
