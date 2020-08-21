@@ -2,6 +2,7 @@ chrome.browserAction.onClicked.addListener(function() {
     chrome.tabs.query({}, tabs => {
         for (let i = 0; i < tabs.length; i++) {
             if (tabs[i].url === 'https://tweetdeck.twitter.com/') {
+                //既存のTweetDeckウィンドウをアクティブ化
                 chrome.tabs.update(tabs[i].id, { active: true });
 
                 //通知
