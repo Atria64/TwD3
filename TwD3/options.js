@@ -2,10 +2,10 @@ document.getElementById('save').addEventListener('click', save_options);
 //Saves options to chrome.storage
 function save_options() {
     var deleteWindowEnabled = document.getElementById('deleteWindow').checked;
-    var banTweetDeckWindowEnabled = document.getElementById('banTweetDeckWindow').checked;
+    var blockTweetDeckWindowEnabled = document.getElementById('blockTweetDeckWindow').checked;
     chrome.storage.sync.set({
         deleteWindowEnabled: deleteWindowEnabled,
-        banTweetDeckWindowEnabled: banTweetDeckWindowEnabled
+        blockTweetDeckWindowEnabled: blockTweetDeckWindowEnabled
     }, function() {
         //Update -> <div id="status"></div>
         var status = document.getElementById('status');
@@ -21,9 +21,9 @@ document.addEventListener('DOMContentLoaded', restore_options);
 function restore_options() {
     chrome.storage.sync.get({
         'deleteWindowEnabled': false,
-        'banTweetDeckWindowEnabled': false
+        'blockTweetDeckWindowEnabled': false
     }, function(items) {
         document.getElementById('deleteWindow').checked = items.deleteWindowEnabled;
-        document.getElementById('banTweetDeckWindow').checked = items.banTweetDeckWindowEnabled;
+        document.getElementById('blockTweetDeckWindow').checked = items.blockTweetDeckWindowEnabled;
     });
 }

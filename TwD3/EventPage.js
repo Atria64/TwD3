@@ -9,9 +9,9 @@ chrome.runtime.onMessage.addListener(
                 }
             }
 
-            chrome.storage.sync.get(['banTweetDeckWindowEnabled', 'deleteWindowEnabled'], function(value) {
-                var banTweetDeckWindowEnabled = value.banTweetDeckWindowEnabled;
-                if (banTweetDeckWindowEnabled === true) {
+            chrome.storage.sync.get(['blockTweetDeckWindowEnabled', 'deleteWindowEnabled'], function(value) {
+                var blockTweetDeckWindowEnabled = value.blockTweetDeckWindowEnabled;
+                if (blockTweetDeckWindowEnabled === true) {
                     chrome.tabs.query({ 'url': 'https://tweetdeck.twitter.com/' }, function(tab) {
                         for (let i = 0; i < TwitterWindowCounter; i++) {
                             chrome.tabs.remove(tab[i].id);
@@ -24,8 +24,8 @@ chrome.runtime.onMessage.addListener(
                         message: '',
                         priority: 1,
                         items: [{
-                            title: 'disabled',
-                            message: chrome.i18n.getMessage('BanedTweetDeckWindow')
+                            title: 'blocked',
+                            message: chrome.i18n.getMessage('blockTweetDeckWindow')
                         }]
                     };
                     let notificationId = "notification";
