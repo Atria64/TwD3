@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "TwD3",
     "description": "__MSG_extDescription__",
-    "version": "1.0.0",
+    "version": "1.2.0",
     "default_locale": "ja",
     "options_page": "optionpage.html",
     "browser_action": {
@@ -14,7 +14,7 @@
         "128": "icon128.png"
     },
     "background": {
-        "scripts": ["EventPage.js","IconClickEvent.js"],
+        "scripts": ["EventPage.js", "IconClickEvent.js"],
         "persistent": false
     },
     "content_scripts": [{
