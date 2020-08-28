@@ -1,5 +1,6 @@
 {
     "extDescription": { "message": "Detects two windows in TweetDeck" },
     "MultipleTweetDeckWindow": { "message": "Multiple TweetDeck windows have been detected." },
-    "blockTweetDeckWindow": { "message": "TweetDeck is currently blocked by settings." }
+    "blockTweetDeckWindow": { "message": "TweetDeck is currently blocked by settings." },
+    "quickAccessCauseDoubleWindow": { "message": "You already have a TweetDeck window open." }
 }

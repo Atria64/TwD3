@@ -13,8 +13,8 @@ chrome.browserAction.onClicked.addListener(function() {
                     message: '',
                     priority: 1,
                     items: [{
-                        title: 'detected',
-                        message: chrome.i18n.getMessage('MultipleTweetDeckWindow')
+                        title: 'Already opened',
+                        message: chrome.i18n.getMessage('quickAccessCauseDoubleWindow')
                     }]
                 };
                 let notificationId = "notification";
