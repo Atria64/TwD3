@@ -29,7 +29,13 @@ chrome.runtime.onMessage.addListener(
                         }]
                     };
                     let notificationId = "TwD3";
-                    chrome.notifications.create(notificationId, options);
+                    chrome.notifications.create(notificationId, options, (notificationId) => {
+                        setTimeout(function() {
+                            chrome.notifications.clear(notificationId, (wasCleared) => {
+                                console.log(wasCleared);
+                            });
+                        }, 5000);
+                    });
                     return;
                 }
 
@@ -56,8 +62,14 @@ chrome.runtime.onMessage.addListener(
                             message: chrome.i18n.getMessage('MultipleTweetDeckWindow')
                         }]
                     };
-                    let notificationId = "Twd3";
-                    chrome.notifications.create(notificationId, options);
+                    let notificationId = "TwD3";
+                    chrome.notifications.create(notificationId, options, (notificationId) => {
+                        setTimeout(function() {
+                            chrome.notifications.clear(notificationId, (wasCleared) => {
+                                console.log(wasCleared);
+                            });
+                        }, 5000);
+                    });
                 }
             });
 
