@@ -28,7 +28,7 @@ chrome.runtime.onMessage.addListener(
                             message: chrome.i18n.getMessage('blockTweetDeckWindow')
                         }]
                     };
-                    let notificationId = "notification";
+                    let notificationId = "TwD3";
                     chrome.notifications.create(notificationId, options);
                     return;
                 }
@@ -56,7 +56,7 @@ chrome.runtime.onMessage.addListener(
                             message: chrome.i18n.getMessage('MultipleTweetDeckWindow')
                         }]
                     };
-                    let notificationId = "notification";
+                    let notificationId = "Twd3";
                     chrome.notifications.create(notificationId, options);
                 }
             });

@@ -17,7 +17,7 @@ chrome.browserAction.onClicked.addListener(function() {
                         message: chrome.i18n.getMessage('quickAccessCauseDoubleWindow')
                     }]
                 };
-                let notificationId = "notification";
+                let notificationId = "TwD3";
                 chrome.notifications.create(notificationId, options);
                 return;
             }
