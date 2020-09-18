@@ -28,8 +28,14 @@ chrome.runtime.onMessage.addListener(
                             message: chrome.i18n.getMessage('blockTweetDeckWindow')
                         }]
                     };
-                    let notificationId = "notification";
-                    chrome.notifications.create(notificationId, options);
+                    let notificationId = "TwD3";
+                    chrome.notifications.create(notificationId, options, (notificationId) => {
+                        setTimeout(function() {
+                            chrome.notifications.clear(notificationId, (wasCleared) => {
+                                console.log(wasCleared);
+                            });
+                        }, 5000);
+                    });
                     return;
                 }
 
@@ -56,8 +62,15 @@ chrome.runtime.onMessage.addListener(
                             message: chrome.i18n.getMessage('MultipleTweetDeckWindow')
                         }]
                     };
-                    let notificationId = "notification";
-                    chrome.notifications.create(notificationId, options);
+                    let notificationId = "TwD3";
+                    //Refresh the notification after 5 seconds. issue #14
+                    chrome.notifications.create(notificationId, options, (notificationId) => {
+                        setTimeout(function() {
+                            chrome.notifications.clear(notificationId, (wasCleared) => {
+                                console.log(wasCleared);
+                            });
+                        }, 5000);
+                    });
                 }
             });
 
