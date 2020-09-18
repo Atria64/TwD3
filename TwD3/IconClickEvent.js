@@ -18,6 +18,7 @@ chrome.browserAction.onClicked.addListener(function() {
                     }]
                 };
                 let notificationId = "TwD3";
+                //Refresh the notification after 5 seconds. issue #14
                 chrome.notifications.create(notificationId, options, (notificationId) => {
                     setTimeout(function() {
                         chrome.notifications.clear(notificationId, (wasCleared) => {
