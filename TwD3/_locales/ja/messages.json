@@ -2,5 +2,6 @@
     "extDescription": { "message": "TweetDeck二窓検知Chrome拡張" },
     "MultipleTweetDeckWindow": { "message": "二窓を検知しました。" },
     "blockTweetDeckWindow": { "message": "現在TweetDeckは設定によりブロックされています。" },
-    "quickAccessCauseDoubleWindow": { "message": "TweetDeckウィンドウは既に開いています。" }
+    "quickAccessCauseDoubleWindow": { "message": "TweetDeckウィンドウは既に開いています。" },
+    "modeSettings": { "message": "モード切り替え" }
 }

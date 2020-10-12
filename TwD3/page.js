@@ -15,3 +15,10 @@ function get_manifest(callback) {
     xhr.open(`GET`, url, true);
     xhr.send(null);
 }
+
+//Apply i18n. 
+var extDescription = document.getElementById("extDescription");
+extDescription.textContent = chrome.i18n.getMessage('extDescription');
+
+var modeSettings = document.getElementById("modeSettings");
+modeSettings.textContent = chrome.i18n.getMessage('modeSettings');
