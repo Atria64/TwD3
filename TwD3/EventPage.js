@@ -9,7 +9,7 @@ chrome.runtime.onMessage.addListener(
                 }
             }
 
-            chrome.storage.sync.get(['blockTweetDeckWindowEnabled', 'deleteWindowEnabled'], function(value) {
+            chrome.storage.sync.get(['blockTweetDeckWindowEnabled', 'autoCloseWindowEnabled'], function(value) {
                 var blockTweetDeckWindowEnabled = value.blockTweetDeckWindowEnabled;
                 if (blockTweetDeckWindowEnabled === true) {
                     chrome.tabs.query({ 'url': 'https://tweetdeck.twitter.com/' }, function(tab) {
@@ -39,9 +39,9 @@ chrome.runtime.onMessage.addListener(
                     return;
                 }
 
-                var deleteWindowEnabled = value.deleteWindowEnabled;
+                var autoCloseWindowEnabled = value.autoCloseWindowEnabled;
                 if (TwitterWindowCounter > 1) {
-                    if (deleteWindowEnabled === true) {
+                    if (autoCloseWindowEnabled === true) {
                         //Deleting tabs when detected double TweetDeck window.
                         chrome.tabs.query({ 'url': 'https://tweetdeck.twitter.com/' }, function(tab) {
                             for (let i = 1; i < TwitterWindowCounter; i++) {
