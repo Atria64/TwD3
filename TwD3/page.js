@@ -22,3 +22,17 @@ extDescription.textContent = chrome.i18n.getMessage('extDescription');
 
 var modeSettings = document.getElementById("modeSettings");
 modeSettings.textContent = chrome.i18n.getMessage('modeSettings');
+
+var autoCloseWindowLabel = document.getElementById("autoCloseWindowLabel");
+//Uses innerHTML to attach a checkbox element
+autoCloseWindowLabel.innerHTML = "<input type=\"checkbox\" id=\"deleteWindow\">" + chrome.i18n.getMessage('autoCloseWindowLabel');
+
+var blockTweetDeckWindowLavel = document.getElementById("blockTweetDeckWindowLavel");
+//Uses innerHTML to attach a checkbox element
+blockTweetDeckWindowLavel.innerHTML = "<input type=\"checkbox\" id=\"blockTweetDeckWindow\">" + chrome.i18n.getMessage('blockTweetDeckWindowLavel');
+
+var save = document.getElementById("save");
+save.textContent = chrome.i18n.getMessage('apply');
+
+var authorHP = document.getElementById("authorHP");
+authorHP.textContent = chrome.i18n.getMessage('authorHP');

@@ -3,5 +3,9 @@
     "MultipleTweetDeckWindow": { "message": "Multiple TweetDeck windows have been detected." },
     "blockTweetDeckWindow": { "message": "TweetDeck is currently blocked by settings." },
     "quickAccessCauseDoubleWindow": { "message": "You already have a TweetDeck window open." },
-    "modeSettings": { "message": "Mode Switching" }
+    "modeSettings": { "message": "Mode Switching" },
+    "autoCloseWindowLabel": { "message": "Automatically close the window when two windows are detected." },
+    "blockTweetDeckWindowLavel": { "message": "Stop opening TweetDeck." },
+    "apply": { "message": "Apply" },
+    "authorHP": { "message": "Author HomePage" }
 }

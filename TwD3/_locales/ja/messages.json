@@ -3,5 +3,9 @@
     "MultipleTweetDeckWindow": { "message": "二窓を検知しました。" },
     "blockTweetDeckWindow": { "message": "現在TweetDeckは設定によりブロックされています。" },
     "quickAccessCauseDoubleWindow": { "message": "TweetDeckウィンドウは既に開いています。" },
-    "modeSettings": { "message": "モード切り替え" }
+    "modeSettings": { "message": "モード切り替え" },
+    "autoCloseWindowLabel": { "message": "二窓検知時に自動でウィンドウを閉じる" },
+    "blockTweetDeckWindowLavel": { "message": "TweetDeckを開かなくする" },
+    "apply": { "message": "適用" },
+    "authorHP": { "message": "作者HP" }
 }
