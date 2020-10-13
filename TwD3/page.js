@@ -25,7 +25,7 @@ modeSettings.textContent = chrome.i18n.getMessage('modeSettings');
 
 var autoCloseWindowLabel = document.getElementById("autoCloseWindowLabel");
 //Uses innerHTML to attach a checkbox element
-autoCloseWindowLabel.innerHTML = "<input type=\"checkbox\" id=\"deleteWindow\">" + chrome.i18n.getMessage('autoCloseWindowLabel');
+autoCloseWindowLabel.innerHTML = "<input type=\"checkbox\" id=\"autoCloseWindow\">" + chrome.i18n.getMessage('autoCloseWindowLabel');
 
 var blockTweetDeckWindowLavel = document.getElementById("blockTweetDeckWindowLavel");
 //Uses innerHTML to attach a checkbox element
